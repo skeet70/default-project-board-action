@@ -1,13 +1,18 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: "Add to Project"
+description: "Set a default project board for issues to be addded to."
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
+  issue:
+    description: "issue number, use {{ github.event.issue.number }}"
     required: true
-    default: '1000'
-outputs:
-  time: # output will be available to future steps 
-    description: 'The message to output'
+  repository:
+    description: "repository path, use {{ github.repository }}"
+    required: true
+  project:
+    description: "project board, use the number in the slug for that board"
+    required: true
+  github_token:
+    description: "GitHub token, use {{ secrets.GITHUB_TOKEN }}"
+    required: true
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: "node12"
+  main: "dist/index.js"
