@@ -1,5 +1,5 @@
 const core = require("@actions/core");
-const wait = require("./wait");
+const fetch = require("node-fetch");
 
 async function github_query(github_token, query, variables) {
   return fetch("https://api.github.com/graphql", {

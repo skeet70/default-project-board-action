@@ -8,8 +8,6 @@ Intended to be used to set a default board for all new issues to automatically b
 
 ## Usage
 
-You can now consume the action by referencing the v1 branch
-
 ```yaml
 name: "Default Project"
 
@@ -30,7 +28,7 @@ jobs:
           project: 1
 ```
 
-See the [actions tab](https://github.com/actions/javascript-action/actions) for runs of this action! :rocket:
+`project` could be set to any project number, found in the slug when you view your project on github.
 
 ## Package for distribution
 
