@@ -83,7 +83,7 @@ async function run() {
     variables = { issueId: issue_id, projectId: project_id };
 
     response = await github_query(github_token, query, variables);
-    console.log(response);
+    console.log(JSON.stringify(response));
     console.log(`Done!`);
   } catch (error) {
     core.setFailed(error.message);
