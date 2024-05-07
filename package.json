@@ -23,7 +23,7 @@
   "homepage": "https://github.com/skeet70/default-project-board-action#readme",
   "dependencies": {
     "@actions/core": "^1.9.1",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.7"
   },
   "devDependencies": {
     "@zeit/ncc": "^0.20.5"
