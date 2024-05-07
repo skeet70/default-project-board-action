@@ -8,9 +8,9 @@ async function github_query(github_token, query, variables) {
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
-      Authorization: `bearer ${github_token}`
-    }
-  }).then(function(response) {
+      Authorization: `bearer ${github_token}`,
+    },
+  }).then(function (response) {
     return response.json();
   });
 }
@@ -35,15 +35,15 @@ async function run() {
     const issue_vars = {
       owner,
       name,
-      number: parseInt(issue)
+      number: parseInt(issue),
     };
 
     const issue_resp = await github_query(
       github_token,
       get_issue_id,
-      issue_vars
+      issue_vars,
     );
-    console.log(issue_resp);
+    console.log(JSON.stringify(issue_resp));
     const issue_id = issue_resp["data"]["repository"]["issue"]["id"];
 
     const get_project_id = `
@@ -57,15 +57,16 @@ async function run() {
     const project_vars = {
       owner,
       name,
-      number: parseInt(project)
+      number: parseInt(project),
     };
 
     const project_resp = await github_query(
       github_token,
       get_project_id,
-      project_vars
+      project_vars,
     );
-    console.log(project_resp);
+    console.log(JSON.stringify(project_resp));
+
     const project_id = project_resp["data"]["repository"]["project"]["id"];
 
     console.log(`Adding issue ${issue} to project ${project}`);

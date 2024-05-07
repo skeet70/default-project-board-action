@@ -4,7 +4,7 @@
 
 # Default Project Board Action
 
-Intended to be used to set a default board for all new issues to automatically be added to.
+Intended to be used to set a default board for all new issues to automatically be added to. Currently only works with `Project (Classic)`, not modern GitHub projects.
 
 ## Usage
 
